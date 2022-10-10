@@ -1,3 +1,3 @@
 # LatestApolloSubscriptionStudy
 
-Latest apollo subscription study with react-native and nest.js!,
+Latest apollo subscription study with react and nest.js!,

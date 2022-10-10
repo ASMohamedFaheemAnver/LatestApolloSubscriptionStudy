@@ -9,11 +9,14 @@ import { User, UserSchema } from './schemas/user.schema';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/cache'),
+    MongooseModule.forRoot('mongodb://localhost:27017'),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       playground: process.env.NODE_ENV !== 'prod',
+      subscriptions: {
+        'graphql-ws': true,
+      },
     }),
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
   ],

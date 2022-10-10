@@ -9,3 +9,7 @@ type Message {
 type Query {
   root: Message!
 }
+
+type Subscription {
+  subscribeRequests: Message!
+}
